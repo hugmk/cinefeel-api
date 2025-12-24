@@ -13,7 +13,7 @@ import { middleware } from './kernel.js'
 
 router.get('/', async () => {
   return {
-    message: 'Welcome to the Cinfeel API',
+    message: 'Welcome to the Cinefeel API',
   }
 })
 
