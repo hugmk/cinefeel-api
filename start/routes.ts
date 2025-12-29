@@ -7,9 +7,10 @@
 |
 */
 
-const AuthController = () => import('#controllers/auth_controller')
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
+const AuthController = () => import('#controllers/auth_controller')
+const GenresController = () => import('#controllers/genres_controller')
 
 router.get('/', async () => {
   return {
@@ -20,3 +21,5 @@ router.get('/', async () => {
 router.post('/register', [AuthController, 'register'])
 router.post('/login', [AuthController, 'login'])
 router.post('/logout', [AuthController, 'logout']).use(middleware.auth())
+
+router.get('/genres', [GenresController, 'index'])
